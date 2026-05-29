@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SECalc.MainWindow"
+        Title="Space Engineers Calculator" Width="800" Height="600">
+
+    <StackPanel Margin="20" Spacing="15">
+        
+        <TextBlock Text="Select CubeBlocks folder (...\steamapps\common\SpaceEngineers\Content\Data\CubeBlocks)" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <Button Click="OnSelectFolderClicked" Content="Select folder..." />
+            <TextBlock Name="FolderPathText" Text="No folder selected" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <TextBlock Text="Blueprint file (.sbc)" FontWeight="Bold" Margin="0,10,0,0"/>
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <Button Click="OnSelectBlueprintClicked" Content="Select file..." />
+            <TextBlock Name="BlueprintPathText" Text="No file selected" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <Button Name="CalculateButton" Click="OnCalculateClicked" Content="Calculate" 
+                Background="#28a745" Foreground="White" 
+                HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,15,0,0"/>
+
+        <TextBlock Text="Results:" FontWeight="Bold" />
+        <ScrollViewer Height="300" Background="#1e1e1e">
+            <TextBlock Name="ResultTextBlock" Foreground="#d4d4d4" Padding="10" Text="Results will be here"/>
+        </ScrollViewer>
+        
+    </StackPanel>
+</Window>
